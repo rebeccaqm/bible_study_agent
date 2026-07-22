@@ -2,12 +2,15 @@ import os
 from google import genai
 from google.genai import types
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Puxar a variável de ambiente do sistema para que ela armazene a api key da LLM
 API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 # Configurando a API
-pessoa = genai.Client(api_key="API_KEY")
+pessoa = genai.Client(api_key=API_KEY)
 
 print("--- ESTUDO BÍBLICO ---")
 print("Vou te ajudar a compreender o texto.\n")
